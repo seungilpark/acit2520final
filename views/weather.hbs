@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    {{> nav }}
+    <div class="mainDiv">
+    <form action="/weather" method="POST">
+        <input class="textInput" name="search_term" type="text" placeholder="Type Location You Want to Search">
+        <input type="submit" value="Submit">
+    </form>
+    <p>Location: {{location}}</p>
+    <p>Weather:{{weather_description}} </p>
+    </div>
+</body>
+
+</html>

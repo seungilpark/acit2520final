@@ -16,10 +16,9 @@ module.exports.getWeather = (search_term) => {
             }
             else {
                 let {weather, name} = body
-                let description = weather["description"]
-                console.log(weather.description, name)
+                console.log(typeof weather, name)
                 resolve({
-                    weather_description: weather.description,
+                    weather_description: weather[0].main,
                     location: name
                 });
             }

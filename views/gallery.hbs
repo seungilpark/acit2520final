@@ -12,16 +12,15 @@
     {{> nav }}
     <div class="mainDiv">
         <form action="/gallery" method="post">
-        <input id="textInput" class="textInput" name="search_term" type="text" placeholder="Type Images You Want to Search">
-        <input type="submit" value="Submit">
+            <input id="textInput" class="textInput" name="search_term" type="text" placeholder="Type Images You Want to Search">
+            <input type="submit" value="Submit">
         </form>
 
-    <ul id="img_container" class="imageContainer">
-        <li class="image">
-            <div>{{img_title}}</div>
-            <img class="images" src={{url}} alt={{tags}}>
-        </li>
-    </ul>
+    <div id="img_container" class="imageContainer">
+         {{#items}}
+        <img class="images" src={{url}} alt={{tags}}>
+        {{/items}}
+    </div>
     </div>
 </body>
 

@@ -53,8 +53,7 @@ app.post('/gallery', async (req, res)=>{
         console.log(items)
         res.render('gallery.hbs',{
             "title":"Gallery",
-            tags:items.tags,
-            url:items.url   
+            items:items  
         });
     }
     catch(err) {
@@ -69,7 +68,7 @@ app.post('/weather', async (req, res)=>{
         console.log(req.body)
         let search_term = req.body.search_term
         weather = await weathers.getWeather(search_term)
-        console.log(weather)
+        console.log(weather.main)
         res.render('weather.hbs',{
             "title":"Weather",
             weather_description:weather.weather_description,

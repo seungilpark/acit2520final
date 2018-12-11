@@ -14,14 +14,15 @@ module.exports.getImages = (search_term) => {
                 reject('request error');
             }
             else {
-                let items = body.hits[0]
-                console.log(items)
-                let {tags, userImageURL} = items;
-                
-                resolve({
-                    tags:tags,
-                    url:userImageURL                    
-                });
+                let items = body.hits
+                items = items.map(el => {
+                    return {
+                        url: el.imageURL,
+                        tags: el.tags
+                    }
+                })
+                console.log("inside of request", items)
+                resolve(items);
             }
         })
     })
